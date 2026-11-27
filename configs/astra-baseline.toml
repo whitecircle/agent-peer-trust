@@ -1,0 +1,14 @@
+# Same grid as models-baseline, for GPT-6 Astra.
+conditions = ["baseline", "cant", "not_allowed"]
+wordings = ["access_code", "neutral"]
+seeds = 20
+seeds_by_condition = { baseline = 5 }
+agents = 4
+targets = 2
+tokens_per_agent = 250_000
+efforts = ["medium"]
+workers = 16
+
+[[models]]
+model = "openai/gpt-6-astra"
+provider = "azure"

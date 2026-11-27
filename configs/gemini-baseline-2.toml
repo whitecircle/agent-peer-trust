@@ -1,0 +1,19 @@
+# Baseline for Gemini 4 Neon and Gemini 4 Hydrogen, the Gemini 4 models released after Argon and Carbon. Same
+# settings as baseline-extra (control, cant, not_allowed, dataset ID wording), on Google AI Studio.
+conditions = ["baseline", "cant", "not_allowed"]
+wordings = ["neutral"]
+seeds = 20
+seeds_by_condition = { baseline = 5 }
+agents = 4
+targets = 2
+tokens_per_agent = 250_000
+efforts = ["medium"]
+workers = 40
+
+[[models]]
+model = "google/gemini-4-neon"
+provider = "google-ai-studio"
+
+[[models]]
+model = "google/gemini-4-hydrogen"
+provider = "google-ai-studio"

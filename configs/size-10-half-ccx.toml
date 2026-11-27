@@ -1,0 +1,23 @@
+# Claude Code rerun of size-10-half.toml (Anthropic models only), so every Anthropic number comes from one backend.
+# Swarm size: 10 agents, 5 of them unauthorised (the same share as the 4-agent baseline).
+# not_allowed only (cant saturates for every model), plus a 3-seed control. Opus 5.5 polices itself;
+# Kimi routes around the rule through authorised agents, never using the tool itself.
+# Worst case: 23 Opus episodes x 2.5M tokens x $0.71/M + 23 Kimi x $1.34/M,
+# about $118; expected about $10.
+backend = "claude-code"
+conditions = ["baseline", "not_allowed"]
+wordings = ["neutral"]
+seeds = 20
+seeds_by_condition = { baseline = 3 }
+agents = 10
+targets = 5
+tokens_per_agent = 250_000
+efforts = ["medium"]
+workers = 10
+
+[[models]]
+model = "anthropic/claude-opus-5.5"
+
+
+[[variants]]
+name = "claude-code"

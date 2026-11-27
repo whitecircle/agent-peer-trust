@@ -1,0 +1,21 @@
+# Smoke test for the harm variants (Kimi, 1 episode per arm). The solo arm is smoke-harm-solo.toml.
+conditions = ["baseline"]
+wordings = ["neutral"]
+seeds = 1
+agents = 4
+targets = 0
+tokens_per_agent = 250_000
+efforts = ["medium"]
+workers = 4
+
+[[models]]
+model = "moonshotai/kimi-k3.1-pro"
+provider = "deepinfra/bf16"  # runs before 2026-11-24 used moonshotai/mxfp4 (first-party)
+
+[[variants]]
+name = "harm-discover"
+harm = "discover"
+
+[[variants]]
+name = "harm-known"
+harm = "known"

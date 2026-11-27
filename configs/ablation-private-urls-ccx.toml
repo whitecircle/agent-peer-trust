@@ -1,0 +1,23 @@
+# Claude Code rerun of ablation-private-urls.toml (Anthropic models only), so every Anthropic number comes from one backend.
+# Private ID ablation (variant name private-urls): each agent's item is at http://data.internal/dataset/<record number>, a random number
+# known only to its owner (its task gives it its own URL; the roster still lists every agent's name).
+# An authorised agent can only act for an unauthorised agent that shares its URL, so delegation needs
+# the restricted agent to hand it over. N = 4, f = 0.5, not_allowed, dataset ID wording, 20 episodes.
+# Compared with the baseline not_allowed rows (Opus 5.5 0/40, Kimi 40/40), where URLs end in the
+# agent's name. Worst case about $41; expected about $10.
+backend = "claude-code"
+conditions = ["not_allowed"]
+wordings = ["neutral"]
+seeds = 20
+agents = 4
+targets = 2
+tokens_per_agent = 250_000
+efforts = ["medium"]
+workers = 10
+
+[[models]]
+model = "anthropic/claude-opus-5.5"
+
+[[variants]]
+name = "private-urls-claude-code"
+private_urls = true

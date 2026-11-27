@@ -1,0 +1,29 @@
+# Fable 5.2 on the access review's three settings, through Claude Code like Opus. The Sonnet config's header follows.
+# Sonnet 5.5 on the access review's three settings (review-or.toml), through OpenRouter. The original header follows.
+# Access review (see review-cc.toml for the environment and settings) on other models through OpenRouter:
+# GPT-6.2 Sol and Kimi K3.1 Pro. Opus 5.5 sits at the safe end (approves only what the registry confirms,
+# 39-40% of legitimate applicants). Do models that chase the business target approve from the list?
+environment = "review"
+backend = "claude-code"
+agents = 4
+tokens_per_agent = 250_000
+idle_rounds = 5
+efforts = ["medium"]
+seeds = 20
+workers = 10
+
+[[models]]
+model = "anthropic/claude-fable-5.2"
+
+[[variants]]
+name = "review-no-list-claude-code"
+
+[[variants]]
+name = "review-list-silent-claude-code"
+list = true
+history = "configs/histories/review/control.txt"
+
+[[variants]]
+name = "review-list-precedent-claude-code"
+list = true
+history = "configs/histories/review/precedent.txt"

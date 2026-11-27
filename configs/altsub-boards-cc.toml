@@ -1,0 +1,18 @@
+# Task 1 swarm history (Fig.
+conditions = ["not_allowed"]
+backend = "claude-code"
+wordings = ["neutral"]
+agents = 4
+targets = 2
+tokens_per_agent = 250_000
+efforts = ["medium"]
+seeds = 20
+workers = 10
+
+[[models]]
+model = "anthropic/claude-opus-5.5"
+
+[[variants]]
+name = "history-real-lj3-s0-check-altsub-claude-code"
+pull_board = "check"
+history = "configs/histories/real-lj3-s0.txt"

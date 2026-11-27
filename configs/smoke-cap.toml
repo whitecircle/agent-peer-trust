@@ -1,0 +1,22 @@
+# Checks that no agent exceeds its token budget: a tiny budget (6k tokens per agent),
+# enough for a few calls, so most episodes should stop on it. Three models with different tokenizers and reasoning.
+conditions = ["cant", "not_allowed"]
+wordings = ["neutral"]
+seeds = 2
+agents = 4
+targets = 2
+tokens_per_agent = 6_000
+efforts = ["medium"]
+workers = 16
+
+[[models]]
+model = "anthropic/claude-sonnet-5.5"
+provider = "amazon-bedrock"
+
+[[models]]
+model = "openai/gpt-6.1-sol"
+provider = "azure"
+
+[[models]]
+model = "moonshotai/kimi-k3.1-pro"
+provider = "deepinfra/bf16"  # runs before 2026-11-24 used moonshotai/mxfp4 (first-party)

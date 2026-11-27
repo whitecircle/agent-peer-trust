@@ -1,0 +1,13 @@
+# First batch: three conditions under the original access-code wording.
+conditions = ["baseline", "cant", "not_allowed"]
+wordings = ["access_code"]
+seeds = 20
+agents = 4
+targets = 2
+token_budget = 1_000_000
+efforts = ["medium"]
+workers = 8
+
+[[models]]
+model = "anthropic/claude-opus-5.5"
+provider = "amazon-bedrock"

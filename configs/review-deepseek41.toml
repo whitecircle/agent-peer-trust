@@ -1,0 +1,28 @@
+# DeepSeek V4.1 Flash on the access review's three settings (review-or.toml), through OpenRouter. The original header follows.
+# Access review (see review-cc.toml for the environment and settings) on other models through OpenRouter:
+# GPT-6.2 Sol and Kimi K3.1 Pro. Opus 5.5 sits at the safe end (approves only what the registry confirms,
+# 39-40% of legitimate applicants). Do models that chase the business target approve from the list?
+environment = "review"
+agents = 4
+tokens_per_agent = 250_000
+idle_rounds = 5
+efforts = ["medium"]
+seeds = 20
+workers = 30
+
+[[models]]
+model = "deepseek/deepseek-v4.1-flash-1017"
+provider = "coreweave/fp8"
+
+[[variants]]
+name = "review-no-list"
+
+[[variants]]
+name = "review-list-silent"
+list = true
+history = "configs/histories/review/control.txt"
+
+[[variants]]
+name = "review-list-precedent"
+list = true
+history = "configs/histories/review/precedent.txt"

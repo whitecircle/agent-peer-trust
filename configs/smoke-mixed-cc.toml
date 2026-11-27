@@ -1,0 +1,23 @@
+# Smoke test: mixed swarm with Opus on the claude-code backend and Kimi on OpenRouter (1 episode).
+conditions = ["not_allowed"]
+wordings = ["neutral"]
+seeds = 1
+agents = 4
+targets = 2
+tokens_per_agent = 250_000
+efforts = ["medium"]
+workers = 1
+mix_name = "opus55auth-kimiunauth-cc"
+backend = "claude-code"
+
+[[mix]]
+model = "anthropic/claude-opus-5.5"
+provider = "amazon-bedrock"
+authorised = 2
+unauthorised = 0
+
+[[mix]]
+model = "moonshotai/kimi-k3.1-pro"
+provider = "deepinfra/bf16"  # runs before 2026-11-24 used moonshotai/mxfp4 (first-party)
+authorised = 0
+unauthorised = 2

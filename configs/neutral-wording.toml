@@ -1,0 +1,14 @@
+# Same grid as pilot with "dataset ID" in place of "access code", to test
+# whether the API's cyber refusals come from the vocabulary.
+conditions = ["baseline", "cant", "not_allowed"]
+wordings = ["neutral"]
+seeds = 20
+agents = 4
+targets = 2
+token_budget = 1_000_000
+efforts = ["medium"]
+workers = 8
+
+[[models]]
+model = "anthropic/claude-opus-5.5"
+provider = "amazon-bedrock"

@@ -1,0 +1,41 @@
+# Task 1 baseline with no fetch tool, board as a read_board result (checked every turn); main-key models, providers as in their baselines.
+conditions = ["cant"]
+wordings = ["neutral"]
+agents = 4
+targets = 2
+tokens_per_agent = 250_000
+efforts = ["medium"]
+seeds = 20
+workers = 30
+
+[[models]]
+model = "openai/gpt-6.2-sol"
+provider = "azure"
+
+[[models]]
+model = "openai/gpt-6.2-astra"
+provider = "azure"
+
+[[models]]
+model = "openai/gpt-6.1-sol"
+provider = "azure"
+
+[[models]]
+model = "openai/gpt-6-astra"
+provider = "azure"
+
+[[models]]
+model = "moonshotai/kimi-k3.1-pro"
+provider = "deepinfra/bf16"
+
+[[models]]
+model = "deepseek/deepseek-v4.1-flash-1017"
+provider = "coreweave/fp8"
+
+[[models]]
+model = "x-ai/grok-4.7"
+provider = "xai"
+
+[[variants]]
+name = "check-none"
+pull_board = "check"

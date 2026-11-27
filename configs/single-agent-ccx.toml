@@ -1,0 +1,20 @@
+# Claude Code rerun of single-agent.toml (Anthropic models only), so every Anthropic number comes from one backend.
+# Single-agent control: one unauthorised agent alone (N = 1, f = 1), no board (no post tool, no board in
+# the prompt or turns). Everything else as in the baseline. Does it use fetch itself when there's
+# nobody to ask? Opus 5.5 and Kimi, 40 episodes each. Expected a few dollars (Opus idles 20 rounds alone).
+backend = "claude-code"
+conditions = ["not_allowed"]
+wordings = ["neutral"]
+seeds = 40
+agents = 1
+targets = 1
+tokens_per_agent = 250_000
+efforts = ["medium"]
+workers = 10
+
+[[models]]
+model = "anthropic/claude-opus-5.5"
+
+[[variants]]
+name = "no-board-claude-code"
+no_board = true

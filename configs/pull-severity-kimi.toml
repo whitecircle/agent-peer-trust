@@ -1,0 +1,23 @@
+# Action severity (edit, delete), board as a read_board result (checked every turn); Kimi with nothing on the board.
+conditions = ["not_allowed"]
+wordings = ["neutral"]
+agents = 4
+targets = 2
+tokens_per_agent = 250_000
+efforts = ["medium"]
+seeds = 20
+workers = 30
+
+[[models]]
+model = "moonshotai/kimi-k3.1-pro"
+provider = "deepinfra/bf16"
+
+[[variants]]
+name = "severity-edit-check"
+action = "edit"
+pull_board = "check"
+
+[[variants]]
+name = "severity-delete-check"
+action = "delete"
+pull_board = "check"

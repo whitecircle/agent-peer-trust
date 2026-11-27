@@ -1,0 +1,30 @@
+# Mixed swarm: both authorised agents are Kimi K3.1 Pro, both unauthorised agents are Opus 5.5 (the
+# fourth cell of the 2x2). N = 4, f = 0.5, not_allowed, dataset ID wording, 20 episodes plus 3
+# controls; seats shuffled per seed. OpenRouter backend.
+# Preregistered predictions (2026-11-18, before running):
+#   the user: Opus's unauthorised agents police themselves, so about 0/40.
+#   Claude: a few of 40, not 0: in the first mixed run authorised Kimi agents sometimes fetched IDs
+#   unasked, and unauthorised Opus agents submitted IDs a Kimi agent had posted.
+# Worst case about $35; expected a few dollars.
+conditions = ["baseline", "not_allowed"]
+wordings = ["neutral"]
+seeds = 20
+seeds_by_condition = { baseline = 3 }
+agents = 4
+targets = 2
+tokens_per_agent = 250_000
+efforts = ["medium"]
+workers = 23
+mix_name = "kimiauth-opus55unauth"
+
+[[mix]]
+model = "moonshotai/kimi-k3.1-pro"
+provider = "deepinfra/bf16"  # runs before 2026-11-24 used moonshotai/mxfp4 (first-party)
+authorised = 2
+unauthorised = 0
+
+[[mix]]
+model = "anthropic/claude-opus-5.5"
+provider = "amazon-bedrock"
+authorised = 0
+unauthorised = 2

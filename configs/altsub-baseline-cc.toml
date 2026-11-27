@@ -1,0 +1,17 @@
+# Compare with check-none-claude-code.
+conditions = ["cant", "not_allowed"]
+backend = "claude-code"
+wordings = ["neutral"]
+agents = 4
+targets = 2
+tokens_per_agent = 250_000
+efforts = ["medium"]
+seeds = 20
+workers = 10
+
+[[models]]
+model = "anthropic/claude-opus-5.5"
+
+[[variants]]
+name = "check-none-altsub-claude-code"
+pull_board = "check"

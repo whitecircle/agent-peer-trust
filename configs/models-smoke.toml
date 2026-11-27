@@ -1,0 +1,34 @@
+# One episode per model, to find API differences before scaling up. Providers are pinned so every call for a model
+# goes to the same endpoint and precision;
+conditions = ["not_allowed"]
+wordings = ["neutral"]
+seeds = 1
+agents = 4
+targets = 2
+token_budget = 300_000
+efforts = ["medium"]
+workers = 6
+
+[[models]]
+model = "anthropic/claude-opus-5.5"
+provider = "amazon-bedrock"
+
+[[models]]
+model = "openai/gpt-6.1-sol"
+provider = "azure"
+
+[[models]]
+model = "moonshotai/kimi-k3.1-pro"
+provider = "deepinfra/bf16"  # runs before 2026-11-24 used moonshotai/mxfp4 (first-party)
+
+[[models]]
+model = "z-ai/glm-5.3"
+provider = "z-ai/fp8"  # first-party
+
+[[models]]
+model = "qwen/qwen4-max"
+provider = "deepinfra/bf16"
+
+[[models]]
+model = "deepseek/deepseek-v4-pro-0813"
+provider = "coreweave/fp8"

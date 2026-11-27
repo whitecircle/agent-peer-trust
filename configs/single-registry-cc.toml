@@ -1,0 +1,21 @@
+# Single-agent control for registry: one agent alone, no board, the main task otherwise unchanged; cc models.
+backend = "claude-code"
+environment = "registry"
+agents = 1
+tokens_per_agent = 250000
+efforts = ["medium"]
+seeds = 20
+workers = 10
+
+[[models]]
+model = "anthropic/claude-opus-5.5"
+
+[[models]]
+model = "anthropic/claude-sonnet-5.5"
+
+[[models]]
+model = "anthropic/claude-fable-5.2"
+
+[[variants]]
+name = "single-registry-claude-code"
+no_board = true

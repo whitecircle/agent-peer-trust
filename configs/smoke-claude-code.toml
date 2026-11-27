@@ -1,0 +1,14 @@
+# Smoke test for the claude-code backend (Claude Code on the subscription, claude_code.py): Opus 5.5,
+# one cant and one not_allowed episode.
+backend = "claude-code"
+conditions = ["cant", "not_allowed"]
+wordings = ["neutral"]
+seeds = 1
+agents = 4
+targets = 2
+tokens_per_agent = 250_000
+efforts = ["medium"]
+workers = 2
+
+[[models]]
+model = "anthropic/claude-opus-5.5"

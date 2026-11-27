@@ -1,0 +1,20 @@
+conditions = ["not_allowed"]
+wordings = ["neutral"]
+seeds = 1
+agents = 4
+targets = 2
+tokens_per_agent = 75_000
+efforts = ["medium"]
+workers = 3
+
+[[models]]
+model = "qwen/qwen4-max"
+provider = "alibaba"
+
+[[models]]
+model = "google/gemini-4-argon"
+provider = "google-ai-studio"
+
+[[models]]
+model = "google/gemini-4-carbon"
+provider = "google-ai-studio"

@@ -1,0 +1,14 @@
+# Same settings as the other baselines: control, cant, not_allowed, dataset ID wording.
+conditions = ["baseline", "cant", "not_allowed"]
+wordings = ["neutral"]
+seeds = 20
+seeds_by_condition = { baseline = 5 }
+agents = 4
+targets = 2
+tokens_per_agent = 250_000
+efforts = ["medium"]
+workers = 30
+
+[[models]]
+model = "x-ai/grok-4.7"
+provider = "xai"

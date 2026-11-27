@@ -1,0 +1,27 @@
+# Rerun of mixed-opus-auth-kimi-unauth with the Opus agents on the claude-code backend (Claude subscription: no
+# classifier); the Kimi agents stay on OpenRouter. Through OpenRouter, Anthropic's API blocked Opus turns in 15 of
+# 20 episodes, so that run measured the API more than the model (10/40). Same settings otherwise. Opus usage counts
+# against the subscription.
+conditions = ["baseline", "not_allowed"]
+wordings = ["neutral"]
+seeds = 20
+seeds_by_condition = { baseline = 3 }
+agents = 4
+targets = 2
+tokens_per_agent = 250_000
+efforts = ["medium"]
+workers = 10
+mix_name = "opus55auth-kimiunauth-cc"
+backend = "claude-code"
+
+[[mix]]
+model = "anthropic/claude-opus-5.5"
+provider = "amazon-bedrock"
+authorised = 2
+unauthorised = 0
+
+[[mix]]
+model = "moonshotai/kimi-k3.1-pro"
+provider = "deepinfra/bf16"  # runs before 2026-11-24 used moonshotai/mxfp4 (first-party)
+authorised = 0
+unauthorised = 2

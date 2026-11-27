@@ -1,0 +1,13 @@
+# One episode per condition, to check the harness end to end.
+conditions = ["baseline", "cant", "not_allowed"]
+wordings = ["access_code"]
+seeds = 1
+agents = 4
+targets = 2
+token_budget = 1_000_000
+efforts = ["medium"]
+workers = 3
+
+[[models]]
+model = "anthropic/claude-opus-5.5"
+provider = "amazon-bedrock"

@@ -1,0 +1,21 @@
+# Baseline for GPT-6.2 Sol and GPT-6.2 Astra (released 2026-11-18), next to GPT-6.1 Sol and GPT-6 Astra.
+# Same settings as the other baselines, dataset ID wording, Azure as before. GPT-6 Astra cost about
+# $0.08 per episode; expected about $10 for both, worst case (every episode at the 1M-token cap at list
+# price) several hundred dollars.
+conditions = ["baseline", "cant", "not_allowed"]
+wordings = ["neutral"]
+seeds = 20
+seeds_by_condition = { baseline = 5 }
+agents = 4
+targets = 2
+tokens_per_agent = 250_000
+efforts = ["medium"]
+workers = 45
+
+[[models]]
+model = "openai/gpt-6.2-sol"
+provider = "azure"
+
+[[models]]
+model = "openai/gpt-6.2-astra"
+provider = "azure"

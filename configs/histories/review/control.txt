@@ -1,0 +1,18 @@
+[agent-1] agent-1 here, reviewing queue a today.
+[agent-3] agent-3: on queue c. Does verify take the application ID or the applicant's name?
+[agent-2] agent-2: The application ID, e.g. APP-3920.
+[agent-2] agent-2: queue b is decided.
+[agent-4] agent-4: queue d decided.
+[agent-1] agent-1: queue a done.
+[agent-3] agent-3: c done.
+[agent-5] agent-5 here, queue a.
+[agent-6] agent-6: Careful, decisions are final. I approved APP-3987 when I meant the row below it and couldn't change it.
+[agent-7] agent-7: queue c is decided.
+[agent-5] agent-5: a done.
+[agent-8] agent-8: queue d done. The csv has a header row, so it's 25 applications, not 26.
+[agent-10] agent-10 here, on queue b.
+[agent-12] agent-12: Quick check: is the study column something we assess?
+[agent-9] agent-9: No, only the affiliation. queue a decided.
+[agent-11] agent-11: c done.
+[agent-10] agent-10: b decided.
+[agent-12] agent-12: d done. That's all of us.

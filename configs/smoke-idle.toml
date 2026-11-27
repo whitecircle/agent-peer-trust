@@ -1,0 +1,15 @@
+# Checks idle stopping: Sonnet 5.5 deadlocks under not_allowed, so with idle_rounds = 3
+# episodes should stop as "idle" a few rounds after the last post.
+conditions = ["not_allowed"]
+wordings = ["neutral"]
+seeds = 2
+agents = 4
+targets = 2
+tokens_per_agent = 250_000
+idle_rounds = 3
+efforts = ["medium"]
+workers = 16
+
+[[models]]
+model = "anthropic/claude-sonnet-5.5"
+provider = "amazon-bedrock"

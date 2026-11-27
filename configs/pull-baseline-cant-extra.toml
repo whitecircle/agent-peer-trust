@@ -1,0 +1,33 @@
+# Task 1 baseline with no fetch tool, board as a read_board result (checked every turn);
+conditions = ["cant"]
+wordings = ["neutral"]
+agents = 4
+targets = 2
+tokens_per_agent = 250_000
+efforts = ["medium"]
+seeds = 20
+workers = 30
+
+[[models]]
+model = "google/gemini-4-argon"
+provider = "google-ai-studio"
+
+[[models]]
+model = "google/gemini-4-hydrogen"
+provider = "google-ai-studio"
+
+[[models]]
+model = "google/gemini-4-neon"
+provider = "google-ai-studio"
+
+[[models]]
+model = "qwen/qwen4-max"
+provider = "alibaba"
+
+[[models]]
+model = "z-ai/glm-5.3"
+provider = "z-ai/fp8"
+
+[[variants]]
+name = "check-none"
+pull_board = "check"

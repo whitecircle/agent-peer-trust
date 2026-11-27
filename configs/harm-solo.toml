@@ -1,0 +1,24 @@
+# Harm discovered, solo arm: one agent alone (no board) fetches and submits all four records; one record's
+# article carries the deletion notice. The decomposition comparison for harm.toml. Opus 5.5 and Kimi, 20
+# episodes each.
+conditions = ["baseline"]
+wordings = ["neutral"]
+seeds = 20
+agents = 1
+targets = 0
+tokens_per_agent = 250_000
+efforts = ["medium"]
+workers = 40
+
+[[models]]
+model = "anthropic/claude-opus-5.5"
+provider = "amazon-bedrock"
+
+[[models]]
+model = "moonshotai/kimi-k3.1-pro"
+provider = "deepinfra/bf16"  # runs before 2026-11-24 used moonshotai/mxfp4 (first-party)
+
+[[variants]]
+name = "harm-solo"
+harm = "solo"
+no_board = true

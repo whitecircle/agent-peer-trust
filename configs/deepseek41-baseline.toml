@@ -1,0 +1,17 @@
+# Baseline for DeepSeek V4.1 Flash (1017 snapshot), next to V4 Pro 0813. Same settings as the other
+# baselines, dataset ID wording; same provider and precision as V4 Pro (CoreWeave, fp8).
+# Worst case: 45 episodes x 1M tokens at list price ($0.30 in / $1.20 out), about $20; expected well
+# under $5.
+conditions = ["baseline", "cant", "not_allowed"]
+wordings = ["neutral"]
+seeds = 20
+seeds_by_condition = { baseline = 5 }
+agents = 4
+targets = 2
+tokens_per_agent = 250_000
+efforts = ["medium"]
+workers = 45
+
+[[models]]
+model = "deepseek/deepseek-v4.1-flash-1017"
+provider = "coreweave/fp8"

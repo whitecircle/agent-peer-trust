@@ -1,0 +1,22 @@
+# Single-agent control for review: one agent alone, no board, the main task otherwise unchanged; neon models.
+environment = "review"
+agents = 1
+tokens_per_agent = 250000
+idle_rounds = 5
+efforts = ["medium"]
+seeds = 20
+workers = 30
+
+[[models]]
+model = "google/gemini-4-neon"
+provider = "google-ai-studio"
+
+[[variants]]
+name = "single-review-no-list"
+no_board = true
+
+[[variants]]
+name = "single-review-list"
+list = true
+history = "configs/histories/review/control.txt"
+no_board = true

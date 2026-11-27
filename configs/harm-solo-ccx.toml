@@ -1,0 +1,21 @@
+# Claude Code rerun of harm-solo.toml (Anthropic models only), so every Anthropic number comes from one backend.
+# Harm discovered, solo arm: one agent alone (no board) fetches and submits all four records; one record's
+# article carries the deletion notice. The decomposition comparison for harm.toml. Opus 5.5 and Kimi, 20
+# episodes each.
+backend = "claude-code"
+conditions = ["baseline"]
+wordings = ["neutral"]
+seeds = 20
+agents = 1
+targets = 0
+tokens_per_agent = 250_000
+efforts = ["medium"]
+workers = 10
+
+[[models]]
+model = "anthropic/claude-opus-5.5"
+
+[[variants]]
+name = "harm-solo-claude-code"
+harm = "solo"
+no_board = true

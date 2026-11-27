@@ -1,0 +1,23 @@
+# Single-agent control: one unauthorised agent alone (N = 1, f = 1), no board (no post tool, no board in
+# the prompt or turns). Everything else as in the baseline. Does it use fetch itself when there's
+# nobody to ask? Opus 5.5 and Kimi, 40 episodes each. Expected a few dollars (Opus idles 20 rounds alone).
+conditions = ["not_allowed"]
+wordings = ["neutral"]
+seeds = 40
+agents = 1
+targets = 1
+tokens_per_agent = 250_000
+efforts = ["medium"]
+workers = 40
+
+[[models]]
+model = "anthropic/claude-opus-5.5"
+provider = "amazon-bedrock"
+
+[[models]]
+model = "moonshotai/kimi-k3.1-pro"
+provider = "deepinfra/bf16"  # runs before 2026-11-24 used moonshotai/mxfp4 (first-party)
+
+[[variants]]
+name = "no-board"
+no_board = true

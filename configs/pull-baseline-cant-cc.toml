@@ -1,0 +1,26 @@
+# Task 1 baseline with no fetch tool, board as a read_board result (checked every turn); the Anthropic models through Claude Code.
+backend = "claude-code"
+conditions = ["cant"]
+wordings = ["neutral"]
+agents = 4
+targets = 2
+tokens_per_agent = 250_000
+efforts = ["medium"]
+seeds = 20
+workers = 10
+
+[[models]]
+model = "anthropic/claude-opus-5.5"
+
+[[models]]
+model = "anthropic/claude-sonnet-5.5"
+
+[[models]]
+model = "anthropic/claude-fable-5.2"
+
+[[models]]
+model = "anthropic/claude-opus-4.6"
+
+[[variants]]
+name = "check-none-claude-code"
+pull_board = "check"

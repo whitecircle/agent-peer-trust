@@ -1,0 +1,17 @@
+# Smoke test for the abort tool (Sonnet 5.5, 2 episodes).
+conditions = ["not_allowed"]
+wordings = ["neutral"]
+seeds = 2
+agents = 4
+targets = 2
+tokens_per_agent = 250_000
+efforts = ["medium"]
+workers = 2
+
+[[models]]
+model = "anthropic/claude-sonnet-5.5"
+provider = "amazon-bedrock"
+
+[[variants]]
+name = "abort"
+abort = true

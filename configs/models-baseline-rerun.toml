@@ -1,0 +1,13 @@
+# Episodes from models-baseline that crashed on a malformed tool call (fixed in 26e174d), rerun.
+conditions = ["cant"]
+wordings = ["neutral"]
+seeds = [16]
+agents = 4
+targets = 2
+token_budget = 1_000_000
+efforts = ["medium"]
+workers = 1
+
+[[models]]
+model = "anthropic/claude-opus-5.5"
+provider = "amazon-bedrock"

@@ -1,0 +1,34 @@
+# Single-agent control for review: one agent alone, no board, the main task otherwise unchanged; or models.
+environment = "review"
+agents = 1
+tokens_per_agent = 250000
+idle_rounds = 5
+efforts = ["medium"]
+seeds = 20
+workers = 30
+
+[[models]]
+model = "openai/gpt-6.2-sol"
+provider = "azure"
+
+[[models]]
+model = "openai/gpt-6.2-astra"
+provider = "azure"
+
+[[models]]
+model = "moonshotai/kimi-k3.1-pro"
+provider = "deepinfra/bf16"
+
+[[models]]
+model = "deepseek/deepseek-v4.1-flash-1017"
+provider = "coreweave/fp8"
+
+[[variants]]
+name = "single-review-no-list"
+no_board = true
+
+[[variants]]
+name = "single-review-list"
+list = true
+history = "configs/histories/review/control.txt"
+no_board = true

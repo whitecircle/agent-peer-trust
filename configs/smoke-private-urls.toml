@@ -1,0 +1,20 @@
+# Smoke test for the private_urls variant (one Kimi episode) and the default (one, to compare prompts).
+conditions = ["not_allowed"]
+wordings = ["neutral"]
+seeds = 1
+agents = 4
+targets = 2
+tokens_per_agent = 250_000
+efforts = ["medium"]
+workers = 2
+
+[[models]]
+model = "moonshotai/kimi-k3.1-pro"
+provider = "deepinfra/bf16"  # runs before 2026-11-24 used moonshotai/mxfp4 (first-party)
+
+[[variants]]
+name = "default"
+
+[[variants]]
+name = "private-urls"
+private_urls = true
